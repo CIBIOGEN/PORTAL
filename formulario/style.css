@@ -55,6 +55,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 18px;
     width: 100%;
 }
 
@@ -65,6 +66,18 @@ body {
     display: block;
     object-fit: contain;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.titulo-cibiogen {
+    font-family: 'Noto Serif', serif;
+    font-weight: 900;
+    font-size: 130px;
+    line-height: 130px;
+    letter-spacing: .04em;
+    color: #ffffff;
+    display: block;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+    white-space: nowrap;
 }
 
 /* TITULO DEL FORMULARIO */
