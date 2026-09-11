@@ -55,24 +55,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
     width: 100%;
 }
 
 .logo-cibiogen {
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     display: block;
     object-fit: contain;
+    flex-shrink: 0;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
 }
 
 .titulo-cibiogen {
     font-family: 'Noto Serif', serif;
     font-weight: 900;
-    font-size: 130px;
-    line-height: 130px;
+    font-size: clamp(26px, 6vw, 44px);
+    line-height: 1.1;
     letter-spacing: .04em;
     color: #ffffff;
     display: block;
@@ -343,8 +344,36 @@ html {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
     .carta {
         padding: 18px 16px;
+    }
+
+    .box-titulo {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .logo-cibiogen {
+        width: 96px;
+        height: 96px;
+    }
+
+    .campo-form input[type="text"],
+    .campo-form input[type="tel"],
+    .campo-form select,
+    .campo-form.corto input {
+        max-width: none;
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .campo-form label {
+        font-size: 0.9rem;
+    }
+
+    .btn-enviar-form {
+        font-size: 1.05rem;
+        padding: 14px 16px;
     }
 }
