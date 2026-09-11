@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<base target="_top">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>CIBIOGEN · Postulación</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<link rel="icon" type="image/png" sizes="32x32" href="cibiogen.png">
+	<link rel="shortcut icon" href="cibiogen.png">
+	<meta name="theme-color" content="#081F5C">
+</head>
+
+<body>
+	<div class="carta">
+		<div class="box-titulo">
+			<img class="logo-cibiogen" src="cibiogen.png" alt="Logo CIBIOGEN">
+		</div>
+	</div>
+
+	<div class="carta">
+		<div class="form-titulo">
+			<h1>Postulat al Centro de Investigación CIBIOGEN</h1>
+			<p>Completa tus datos y adjunta tu carta de intención en PDF</p>
+		</div>
+
+		<!-- Pantalla de éxito -->
+		<div class="pantalla-exito-form" id="pantalla-exito">
+			<div class="icono-exito">✅</div>
+			<h2>¡Postulación enviada!</h2>
+			<p id="texto-exito">Tu inscripción fue registrada correctamente.</p>
+			<br>
+			<button type="button" class="btn-reiniciar-form" onclick="reiniciar()">Registrar otra postulación</button>
+		</div>
+
+		<form id="formPostulacion" novalidate>
+			<div class="seccion-form">
+				<h3>Datos personales</h3>
+				<div class="fila-form tres">
+					<div class="campo-form">
+						<label for="nombres">Nombres</label>
+						<input type="text" id="nombres" name="nombres" required>
+					</div>
+					<div class="campo-form">
+						<label for="apellidoPaterno">Apellido paterno</label>
+						<input type="text" id="apellidoPaterno" name="apellidoPaterno" required>
+					</div>
+					<div class="campo-form">
+						<label for="apellidoMaterno">Apellido materno</label>
+						<input type="text" id="apellidoMaterno" name="apellidoMaterno" required>
+					</div>
+				</div>
+				<div class="fila-form tres">
+					<div class="campo-form corto">
+						<label for="codigo">Código universitario</label>
+						<input type="text" id="codigo" name="codigo" maxlength="6" pattern="[0-9]{6}" inputmode="numeric" placeholder="Ej. 231234" required>
+						<div class="ayuda-form">6 dígitos.</div>
+					</div>
+					<div class="campo-form corto">
+						<label for="celular">Celular</label>
+						<input type="tel" id="celular" name="celular" maxlength="9" pattern="[0-9]{9}" inputmode="numeric" placeholder="Ej. 987654321" required>
+						<div class="ayuda-form">9 dígitos.</div>
+					</div>
+					<div class="campo-form corto">
+						<label for="semestre">Semestre actual</label>
+						<input type="text" id="semestre" name="semestre" placeholder="Ej. VII, 2026-II" required>
+					</div>
+				</div>
+			</div>
+
+			<div class="seccion-form">
+				<h3>Carta de intención</h3>
+				<div class="archivo-input-form">
+					Sube tu carta de intención en formato PDF
+					<br>
+					<input type="file" id="carta" name="carta" accept="application/pdf" required>
+				</div>
+			</div>
+
+			<button type="submit" id="btnEnviar" class="btn-enviar-form">Enviar postulación</button>
+			<div id="mensaje-form"></div>
+		</form>
+	</div>
+
+	<script src="common.js"></script>
+	<script>
+		const form = document.getElementById('formPostulacion');
+		const btnEnviar = document.getElementById('btnEnviar');
+		const mensaje = document.getElementById('mensaje-form');
+		const pantallaExito = document.getElementById('pantalla-exito');
+
+		activarLimpiezaDeErrores(form);
+
+		function reiniciar() {
+			reiniciarFormularioGenerico(form, pantallaExito);
+		}
+
+		function validarFormato() {
+			const codigo = document.getElementById('codigo').value.trim();
+			const celular = document.getElementById('celular').value.trim();
+			const carta = document.getElementById('carta').files[0];
+
+			let error = '';
+			if (!/^[0-9]{6}$/.test(codigo)) error = 'El código universitario debe tener exactamente 6 dígitos (ej. 231234).';
+			else if (!/^[0-9]{9}$/.test(celular)) error = 'El celular debe tener exactamente 9 dígitos.';
+			else if (!carta) error = 'Adjunta tu carta de intención en PDF.';
+			else if (!/\.pdf$/i.test(carta.name)) error = 'La carta de intención debe ser un archivo PDF.';
+			return error;
+		}
+
+		form.addEventListener('submit', async function (e) {
+			e.preventDefault();
+
+			if (formularioTieneEspaciosVacios(form)) {
+				mensaje.className = 'error';
+				mensaje.textContent = 'Hay campos sin completar (marcados en rojo). Revisa que no queden vacíos ni con solo espacios.';
+				return;
+			}
+
+			const errorFormato = validarFormato();
+			if (errorFormato) {
+				mensaje.className = 'error';
+				mensaje.textContent = errorFormato;
+				return;
+			}
+
+			btnEnviar.disabled = true;
+			btnEnviar.textContent = 'Enviando...';
+			mensaje.className = '';
+
+			const archivoCarta = document.getElementById('carta').files[0];
+			const cartaBase64 = await leerArchivoComoBase64(archivoCarta);
+			const cartaNombre = archivoCarta ? archivoCarta.name : '';
+
+			const datos = {
+				cartaBase64: cartaBase64,
+				cartaNombre: cartaNombre,
+				nombres: document.getElementById('nombres').value.trim(),
+				apellidoPaterno: document.getElementById('apellidoPaterno').value.trim(),
+				apellidoMaterno: document.getElementById('apellidoMaterno').value.trim(),
+				codigo: document.getElementById('codigo').value.trim(),
+				celular: document.getElementById('celular').value.trim(),
+				semestre: document.getElementById('semestre').value.trim()
+			};
+
+			enviarPostulacion(datos)
+				.then(function (respuesta) {
+					btnEnviar.disabled = false;
+					btnEnviar.textContent = 'Enviar postulación';
+					if (respuesta.ok) {
+						document.getElementById('texto-exito').textContent = respuesta.mensaje;
+						form.style.display = 'none';
+						pantallaExito.classList.add('visible');
+					} else {
+						mensaje.className = 'error';
+						mensaje.textContent = respuesta.mensaje;
+					}
+				})
+				.catch(function (error) {
+					btnEnviar.disabled = false;
+					btnEnviar.textContent = 'Enviar postulación';
+					mensaje.className = 'error';
+					mensaje.textContent = 'Error: ' + error.message;
+				});
+		});
+	</script>
+</body>
+</html>
