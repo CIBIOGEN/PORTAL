@@ -6,7 +6,7 @@
 // URL de la Web App de Apps Script. Solo se usa cuando el
 // formulario corre fuera de Apps Script (ej. GitHub Pages).
 // REEMPLAZAR con el /exec de tu proyecto en Google Apps Script.
-const API_URL = 'https://script.google.com/macros/s/TU_ID_DE_APP_SCRIPT/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbxTe5Vp1H-Kt1LDTrlM2A1znCSo1IM6_9NO08omM750C6k8xedDPIWxMmV8LrxeFqdqjg/exec';
 
 function ejecutandoEnAppsScript() {
   return typeof google !== 'undefined' &&
