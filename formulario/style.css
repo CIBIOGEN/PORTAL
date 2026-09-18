@@ -193,6 +193,24 @@ body {
     display: none !important;
 }
 
+/* AVISO DE POSTULACIONES CERRADAS */
+.aviso-cerrado-form {
+    display: none;
+    text-align: center;
+    padding: 20px 18px;
+    margin-top: 18px;
+    border-radius: 14px;
+    border: 1.5px solid rgba(255, 179, 71, 0.5);
+    background: rgba(255, 179, 71, 0.12);
+}
+
+.aviso-cerrado-form p {
+    margin: 6px 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.95rem;
+    font-family: 'Noto Serif', serif;
+}
+
 /* SUBIDA DE PDF */
 .archivo-input-form {
     border: 1.5px dashed rgba(255, 255, 255, 0.3);

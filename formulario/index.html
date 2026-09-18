@@ -30,6 +30,11 @@
 			<p>Completa tus datos y adjunta tu carta de intención en PDF</p>
 		</div>
 
+		<div id="aviso-cerrado" class="aviso-cerrado-form">
+			<p>⚠️ Las postulaciones se encuentran <strong>cerradas</strong>.</p>
+			<p>Pronto habilitaremos una nueva convocatoria. ¡Sigue atento a nuestras redes!</p>
+		</div>
+
 		<!-- Pantalla de éxito -->
 		<div class="pantalla-exito-form" id="pantalla-exito">
 			<div class="icono-exito">✅</div>
@@ -95,6 +100,13 @@
 		const mensaje = document.getElementById('mensaje-form');
 		const pantallaExito = document.getElementById('pantalla-exito');
 
+		if (!FORMULARIO_ACTIVO) {
+			document.getElementById('aviso-cerrado').style.display = 'block';
+			form.style.display = 'none';
+		} else {
+			document.getElementById('aviso-cerrado').style.display = 'none';
+		}
+
 		activarLimpiezaDeErrores(form);
 
 		function reiniciar() {
@@ -116,6 +128,12 @@
 
 		form.addEventListener('submit', async function (e) {
 			e.preventDefault();
+
+			if (!FORMULARIO_ACTIVO) {
+				mensaje.className = 'error';
+				mensaje.textContent = 'Las postulaciones se encuentran cerradas en este momento.';
+				return;
+			}
 
 			if (formularioTieneEspaciosVacios(form)) {
 				mensaje.className = 'error';

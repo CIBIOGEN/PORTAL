@@ -8,6 +8,9 @@
 // REEMPLAZAR con el /exec de tu proyecto en Google Apps Script.
 const API_URL = 'https://script.google.com/macros/s/AKfycbxTe5Vp1H-Kt1LDTrlM2A1znCSo1IM6_9NO08omM750C6k8xedDPIWxMmV8LrxeFqdqjg/exec';
 
+// Formulario abierto/cerrado para postulaciones (control desde el front).
+const FORMULARIO_ACTIVO = false;
+
 function ejecutandoEnAppsScript() {
   return typeof google !== 'undefined' &&
          google.script &&
