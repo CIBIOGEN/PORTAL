@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIBIOGEN — Centro de Investigación en Biotecnología y Genética</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="prueba.css">
+</head>
+<body>
+
+    <main class="main-content">
+        <div class="arc-container" id="arc-container">
+            <!-- Canvas de fondo para conexiones sinápticas -->
+            <canvas id="synapse-canvas"></canvas>
+
+            <!-- Logo Principal Central (Centro de Investigación) -->
+            <div class="main-logo" id="center-logo">
+                <img src="logo_cibiogen.svg" alt="Centro de Investigación" onerror="this.style.display='none'">
+            </div>
+
+            <!-- Equipos de Estudio (Verdes flotantes) -->
+            <div class="child-wrapper child-1">
+                <div class="child-logo" title="Equipo 1"></div>
+                <span class="child-label">Team de Bioinformática</span>
+            </div>
+
+            <div class="child-wrapper child-2">
+                <div class="child-logo" title="Equipo 2"></div>
+                <span class="child-label">Team de Biociencias y Biotecnología</span>
+            </div>
+
+            <div class="child-wrapper child-3">
+                <div class="child-logo" title="Equipo 3"></div>
+                <span class="child-label">Team de Salud y Genética Toxicológica</span>
+            </div>
+
+            <div class="child-wrapper child-4">
+                <div class="child-logo" title="Equipo 4"></div>
+                <span class="child-label">Team de Genética Poblacional</span>
+            </div>
+
+            <!-- quinto equipo eliminado por petición -->
+        </div>
+    </main>
+
+    <section class="carousel-section">
+        <div class="carousel-container" id="draggable-carousel">
+            <!-- Elementos con etiqueta -->
+            <div class="carousel-item-wrapper">
+                <div class="carousel-item">
+                    <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M2 12h4l2-7 4 14 2-7h4"/></svg>
+                </div>
+                <span class="carousel-label">PCR Virtual</span>
+            </div>
+            <div class="carousel-item-wrapper">
+                <div class="carousel-item">
+                    <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M8 3c0 4-4 4-4 8s4 4 4 8M16 3c0 4 4 4 4 8s-4 4-4 8M6 7h12M6 12h12M6 17h12"/></svg>
+                </div>
+                <span class="carousel-label">Modelos Génicos</span>
+            </div>
+            <div class="carousel-item-wrapper">
+                <div class="carousel-item">
+                    <svg class="carousel-icon" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.3"/><circle cx="6" cy="18" r="2.3"/><path d="M8.3 7.6 20 18M8.3 16.4 20 6"/></svg>
+                </div>
+                <span class="carousel-label">Análisis CRISPR</span>
+            </div>
+            <div class="carousel-item-wrapper">
+                <div class="carousel-item">
+                    <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg>
+                </div>
+                <span class="carousel-label">Simulador 3D</span>
+            </div>
+            <div class="carousel-item-wrapper">
+                <div class="carousel-item">
+                    <svg class="carousel-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg>
+                </div>
+                <span class="carousel-label">Bioinformática</span>
+            </div>
+            <div class="carousel-item-wrapper">
+                <div class="carousel-item">
+                    <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M4 4h4v4H4zM10 4h4v4h-4zM16 4h4v4h-4zM4 10h4v4H4zM10 10h4v4h-4zM16 10h4v4h-4zM4 16h4v4H4zM10 16h4v4h-4zM16 16h4v4h-4z"/></svg>
+                </div>
+                <span class="carousel-label">Genotipado</span>
+            </div>
+            <div class="carousel-item-wrapper">
+                <div class="carousel-item">
+                    <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M9 2h6M10 2v6l-5 10a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-10V2"/></svg>
+                </div>
+                <span class="carousel-label">Extracción ADN</span>
+            </div>
+            <div class="carousel-item-wrapper">
+                <div class="carousel-item">
+                    <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M4 20V10M9 20V4M14 20V13M19 20V7"/></svg>
+                </div>
+                <span class="carousel-label">Secuenciación</span>
+            </div>
+        </div>
+    </section>
+
+        <!-- Insertar Quiénes Somos y Asesores del index debajo del carrusel -->
+        <section class="seccion" aria-labelledby="quienes-somos">
+            <div class="tituloglobo">
+                <h2 id="quienes-somos">Quiénes Somos</h2>
+            </div>
+            <hr>
+            <div class="grindgral">
+                <div class="cartagral">
+                    <a href="https://www.facebook.com/cibiogen">
+                        <img src="https://scontent.flim28-2.fna.fbcdn.net/v/t39.30808-6/488666852_991078926557444_7067419840210087296_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=2a1932&_nc_eui2=AeFX8aiFQBawg5nuTaghieDr3k3Rtswy21jeTdG2zDLbWMxL8STkee4hukHist2rjBnDwml17DV-uDiBiZfThPld&_nc_ohc=vjQf70tjIjMQ7kNvwG628Z2&_nc_oc=AdrhRfKdwldIZnwj-QMdicBAAUbQa2YHqWwBLuZq4wC6YOr0YBJpD3tIISrOWCziAHk&_nc_zt=23&_nc_ht=scontent.flim28-2.fna&_nc_gid=Y1Tt9uymYwG-PPZwg8sYlA&_nc_ss=7b2a8&oh=00_Af6MTCH-uybhg2Rqv9EqGUFRiVX4-z4kgOCI2JXQVgrftg&oe=69FDA968" alt="Equipo CIBIOGEN">
+                    </a>
+                    <p>El <strong>Centro de Investigación en Biotecnología y Genética (CIBIOGEN)</strong> es una organización estudiantil de la Escuela Profesional de Biología de la <strong>Universidad Nacional de San Antonio Abad del Cusco (UNSAAC)</strong>, dedicada a promover la investigación formativa, el desarrollo científico y la divulgación académica en las áreas de <strong>biotecnología</strong>, <strong>genética</strong> y ciencias afines.</p>
+                    <p>Somos un espacio de aprendizaje, innovación y construcción científica, donde estudiantes desarrollan competencias investigativas, participan activamente en proyectos académicos y contribuyen a la generación y difusión del conocimiento científico dentro y fuera de la universidad. Como célula básica de investigación, CIBIOGEN busca fortalecer la formación de nuevos investigadores y consolidar una comunidad universitaria comprometida con la ciencia, la innovación y el desarrollo regional.</p>
+                <hr>
+                <nav class="info-cibiogen" aria-label="Información general de CIBIOGEN">
+                <div class="item-info">
+                    <h3>Sede principal</h3>
+                    <p> Laboratorio de Biología Molecular (C-321), Facultad de Ciencias Biológicas</p>
+                </div>
+             <div class="item-info">
+                    <h3>Liderazgo actual</h3>
+                    <p>Presidido por <strong>Claudio E. Yenque Moreno</strong></p>
+             </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="seccion" aria-labelledby="asesores-titulo">
+            <div class="tituloglobo">
+                <h2 id="asesores-titulo">Asesores</h2>
+            </div>
+            <hr>
+            <div class="gridasesores">
+
+                <div class="asesor">
+                    <img src="teto.png" alt="Foto de Profesor Y">
+                    <div>
+                        <h3>Profesor Y</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolore debitis illo ad ex, consequuntur, vel similique cumque facilis tenetur architecto.</p>
+                    </div>
+                </div>
+
+                <div class="asesor">
+                    <img src="teto.png" alt="Foto de Profesor X">
+                    <div>
+                        <h3>Profesor X</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ipsam laboriosam, nihil deleniti accusantium esse quidem non, quaerat aliquam voluptatum incidunt.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="flecha">
+                <a href="asesores.html">Ver más asesores</a>
+            </div>
+        </section>
+
+
+    <script src="prueba.js"></script>
+</body>
+</html>
