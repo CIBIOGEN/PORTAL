@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login — CIBIOGEN</title>
+    <link rel="stylesheet" href="prueba.css">
+    <style>
+        /* pequeñas reglas locales para el layout de login */
+        .login-root{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px;background:linear-gradient(120deg,#05060f 0%, #0a0e2b 60%)}
+        .login-card{width:920px;max-width:960px;background:rgba(8,10,20,0.6);border-radius:14px;padding:22px;box-shadow:0 20px 50px rgba(0,0,0,0.6);border:1px solid rgba(125,122,255,0.06);display:flex;gap:20px}
+        .login-form{flex:0 0 360px}
+        .login-form h2{color:var(--text-hi);margin-bottom:12px}
+        .form-row{margin-bottom:12px}
+        .form-row label{display:block;color:var(--text-lo);font-weight:600;margin-bottom:6px}
+        .form-row input[type=text],.form-row input[type=email],.form-row textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:var(--text-hi)}
+        .btn-primary{display:inline-block;padding:10px 14px;background:linear-gradient(90deg,var(--ember-300),var(--ember-500));color:var(--text-hi);border-radius:10px;text-decoration:none;border:none;font-weight:700;cursor:pointer}
+        .profile-pane{flex:1;padding:8px;display:flex;flex-direction:column;gap:12px}
+    </style>
+</head>
+<body>
+    <div class="login-root">
+        <div class="login-card">
+            <div class="login-form">
+                <h2>Inicia sesión</h2>
+                <form id="login-form">
+                    <div class="form-row">
+                        <label for="name">Nombre</label>
+                        <input id="name" name="name" type="text" required placeholder="Tu nombre completo">
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Correo</label>
+                        <input id="email" name="email" type="email" placeholder="tu@ejemplo.com">
+                    </div>
+                    <div class="form-row">
+                        <label for="avatar">Foto (opcional)</label>
+                        <input id="avatar" name="avatar" type="file" accept="image/*">
+                    </div>
+                    <div style="display:flex;gap:8px;align-items:center">
+                        <button class="btn-primary" type="submit">Iniciar sesión</button>
+                        <button id="clear" type="button" class="btn-secondary" style="background:transparent;border:0;color:var(--text-lo);cursor:pointer">Borrar datos</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="profile-pane">
+                <div id="profile-view" style="display:none">
+                    <div class="profile-card">
+                        <div class="avatar-wrap"><img id="profile-avatar" src="img/Libro1.jpg" alt="avatar"></div>
+                        <div class="profile-meta">
+                            <h3 id="profile-name"></h3>
+                            <p id="profile-email" class="muted"></p>
+                            <div style="margin-top:8px"><button id="logout" class="btn-primary">Cerrar sesión</button></div>
+                        </div>
+                    </div>
+
+                    <div class="wall">
+                        <h4 style="margin:8px 0 6px 0;color:var(--text-hi)">Tu muro</h4>
+                        <form id="post-form">
+                            <textarea id="post-text" placeholder="¿Qué quieres compartir?" rows="3" style="width:100%;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:var(--text-hi)"></textarea>
+                            <div style="margin-top:8px"><button class="btn-primary" type="submit">Publicar</button></div>
+                        </form>
+                        <div id="posts" style="margin-top:12px;display:flex;flex-direction:column;gap:12px"></div>
+                    </div>
+                </div>
+
+                <div id="welcome" style="color:var(--text-lo)">
+                    <h3 style="color:var(--text-hi);margin:0">Carnet virtual</h3>
+                    <p class="muted">Al iniciar sesión verás tu perfil y un pequeño muro donde puedes publicar mensajes (guardado localmente).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Manejo simple en localStorage
+        const form = document.getElementById('login-form');
+        const avatarInput = document.getElementById('avatar');
+        const clearBtn = document.getElementById('clear');
+
+        function loadUser(){
+            try{return JSON.parse(localStorage.getItem('cibiogen_user'))}catch(e){return null}
+        }
+
+        function saveUser(u){localStorage.setItem('cibiogen_user',JSON.stringify(u))}
+
+        function showProfile(){
+            const u = loadUser();
+            if(!u) return;
+            document.getElementById('profile-name').textContent = u.name || 'Usuario';
+            document.getElementById('profile-email').textContent = u.email || '';
+            document.getElementById('profile-avatar').src = u.avatar || 'img/Libro1.jpg';
+            document.getElementById('profile-view').style.display = 'block';
+            document.getElementById('welcome').style.display = 'none';
+            renderPosts(u.posts||[]);
+        }
+
+        function renderPosts(posts){
+            const container = document.getElementById('posts');
+            container.innerHTML = '';
+            (posts||[]).slice().reverse().forEach(p=>{
+                const div = document.createElement('div');
+                div.className='post';
+                div.style.padding='12px';
+                div.style.borderRadius='10px';
+                div.style.background='linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))';
+                div.innerHTML = `<div style="font-weight:700;color:var(--text-hi)">${p.text}</div><div style="font-size:0.85rem;color:var(--text-lo);margin-top:6px">${new Date(p.t).toLocaleString()}</div>`;
+                container.appendChild(div);
+            });
+        }
+
+        form.addEventListener('submit', async (e)=>{
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            let avatar = null;
+            if(avatarInput.files && avatarInput.files[0]){
+                avatar = await fileToDataURL(avatarInput.files[0]);
+            }
+            const user = {name,email,avatar,posts:[]};
+            saveUser(user);
+            showProfile();
+        });
+
+        function fileToDataURL(file){
+            return new Promise((res,rej)=>{
+                const r = new FileReader();
+                r.onload = ()=>res(r.result);
+                r.onerror = rej;
+                r.readAsDataURL(file);
+            })
+        }
+
+        document.getElementById('logout').addEventListener('click', ()=>{
+            localStorage.removeItem('cibiogen_user');
+            location.reload();
+        });
+
+        document.getElementById('post-form').addEventListener('submit',(e)=>{
+            e.preventDefault();
+            const text = document.getElementById('post-text').value.trim();
+            if(!text) return;
+            const u = loadUser() || {posts:[]};
+            u.posts = u.posts || [];
+            u.posts.push({text,t:Date.now()});
+            saveUser(u);
+            document.getElementById('post-text').value='';
+            renderPosts(u.posts);
+        });
+
+        clearBtn.addEventListener('click', ()=>{localStorage.removeItem('cibiogen_user');location.reload();});
+
+        // inicializa
+        const existing = loadUser();
+        if(existing){
+            // rellenar inputs con datos si existen
+            document.getElementById('name').value = existing.name || '';
+            document.getElementById('email').value = existing.email || '';
+            showProfile();
+        }
+    </script>
+</body>
+</html>
