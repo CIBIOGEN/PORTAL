@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="noche">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Panel de administración de imágenes - CIBIOGEN">
+  <title>Panel — CIBIOGEN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/theme.js" defer></script>
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="cabecera-brand">
+      <a href="index.html">
+        <img src="img/logo_cibiogen.png" alt="Logo CIBIOGEN">
+        <h1>CIBIOGEN</h1>
+      </a>
+    </div>
+    <nav class="cabecera-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="articulos.html">Artículos</a>
+      <a href="asesores.html">Asesores</a>
+      <a href="invest.html">Investigación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="cabecera-actions">
+      <a class="top-right-login" href="index.html">Ver sitio</a>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <section class="seccion admin-seccion" aria-labelledby="admin-titulo">
+      <div class="tituloglobo">
+        <h2 id="admin-titulo">Panel de Imágenes — Slider de la Portada</h2>
+      </div>
+      <hr>
+      <p class="admin-intro">Sube o quita las imágenes que aparecen en el carrusel de artículos de la portada. Los cambios se guardan en este navegador y se muestran al instante.</p>
+
+      <div class="admin-toolbar">
+        <label class="admin-upload" for="admin-file-input">
+          Subir imágenes
+        </label>
+        <input type="file" id="admin-file-input" accept="image/*" multiple hidden>
+        <button type="button" class="admin-reset" id="admin-reset">Restaurar predeterminadas</button>
+      </div>
+
+      <div class="admin-grid" id="admin-grid" aria-label="Imágenes del slider"></div>
+
+      <div class="admin-empty" id="admin-empty" hidden>
+        Aún no hay imágenes personalizadas. Sube una o deja las predeterminadas.
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto" class="pie">
+    <nav aria-label="Navegación de pie de página">
+      <a href="https://github.com/K-Kr0en3n" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.facebook.com/cibiogen/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.unsaac.edu.pe/" target="_blank" rel="noopener">UNSAAC</a>
+      <a href="index.html">Volver al inicio</a>
+    </nav>
+    <p>© 2026 CIBIOGEN — Panel de administración</p>
+  </footer>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -804,6 +804,127 @@ img { max-width: 100%; }
     .aliado-links { justify-content: center; }
 }
 
+/* --panel admin -- */
+.admin-main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-seccion {
+    width: 100%;
+    max-width: 980px;
+}
+
+.admin-intro {
+    color: var(--text-lo);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.admin-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.admin-upload {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    color: var(--text-hi);
+    background: var(--cta-grad);
+    border: 1px solid var(--accent-border);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-upload:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.admin-reset {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-lo);
+    background: var(--surface-c);
+    border: 1px solid var(--line);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.admin-reset:hover {
+    background: var(--danger-tint, rgba(255, 80, 80, 0.15));
+    color: var(--danger, #ff6b6b);
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.admin-card {
+    background: var(--surface-a);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.admin-card img {
+    width: 100%;
+    aspect-ratio: 210 / 297;
+    object-fit: cover;
+    display: block;
+    background: var(--surface-c);
+}
+
+.admin-card-actions {
+    padding: 10px;
+}
+
+.admin-remove {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-lo);
+    background: var(--surface-c);
+    border: 1px solid var(--line);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.admin-remove:hover {
+    background: var(--danger-tint, rgba(255, 80, 80, 0.15));
+    color: var(--danger, #ff6b6b);
+}
+
+.admin-empty {
+    text-align: center;
+    color: var(--text-lo);
+    padding: 30px;
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    background: var(--surface-a);
+}
+
+@media (max-width: 600px) {
+    .admin-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+}
+
 /* --footer -- */
 .pie {
     text-align: center;
