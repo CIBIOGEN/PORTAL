@@ -1,82 +1,81 @@
 <!DOCTYPE html>
-<html lang= es>
+<html lang="es" data-theme="noche">
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="pagina web CIBIOGEN"/>
-    <link rel="stylesheet" href="css/estilos.css"/>
-    <title> CIBIOGEN </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artículos - CIBIOGEN">
+    <title>Artículos — CIBIOGEN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/theme.js" defer></script>
 </head>
 
 <body>
 
-  <header>
-    <div>
-      <img src="img/logo_cibiogen.svg">
-      <h1>CIBIOGEN</h1>
+  <header class="cabecera">
+    <div class="cabecera-brand">
+      <a href="index.html">
+        <img src="img/logo_cibiogen.png" alt="Logo CIBIOGEN">
+        <h1>CIBIOGEN</h1>
+      </a>
     </div>
-    <nav>
+    <nav class="cabecera-nav" aria-label="Navegación principal">
       <a href="index.html">Inicio</a>
-      <a href="articulos.html">Artículos</a>
+      <a href="articulos.html" aria-current="page">Artículos</a>
       <a href="asesores.html">Asesores</a>
-      <a href="invest.html">Investigacion</a>
-      <a href="#">Contacto</a>
+      <a href="invest.html">Investigación</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </header>
-  
-    <main>
-      <div class="chamba">
-        <h1>Pagina en progreso...</h1>
-        <img src="https://media.tenor.com/M1SdSNvWjbkAAAAi/teto.gif">
+
+  <main>
+    <section class="seccion" aria-labelledby="articulos-titulo">
+      <div class="tituloglobo">
+        <h2 id="articulos-titulo">Artículos</h2>
       </div>
-        <section class="seccion">
-        <div class="tituloglobo">
-            <h2>Artículos</h2>
-        </div>
-        <hr>
+      <hr>
       <div class="gridarticulos">
 
         <article class="carta">
           <img src="https://scontent.flim13-1.fna.fbcdn.net/v/t51.82787-15/673843918_18085281965626557_3512902232266827897_n.webp?stp=dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeFaQvWJV-U4rHFmnDwxJk_zAr8fXaFlL1MCvx9doWUvU8us36XGPYfvrBB3oeRnCHQKEK6fbgL-NVQKvQR8bdq9&_nc_ohc=DJRVP3asVaUQ7kNvwFpJ4Hk&_nc_oc=Adpj14Az2DUo130T4Ja85696E2W-6gNW7vkFihOX_VEPSlS21iQm2M73qmbRvaoIJf8&_nc_zt=23&_nc_ht=scontent.flim13-1.fna&_nc_gid=lWMSFCcQL3dU4xuyQXtBUw&_nc_ss=7b2a8&oh=00_Af3IYQ9N1zxeVMFHrmdAmi22mAWY8PutXFe7oDRQtYpLqQ&oe=69F948D5" alt="Artículo 1">
           <h3>Artículo 1</h3>
           <time datetime="2020-09-12">2020</time>
-          <p>🧬 ¡Hoy celebramos el manual de instrucciones de la vida! </p>
+          <p>🧬 ¡Hoy celebramos el manual de instrucciones de la vida!</p>
         </article>
 
         <article class="carta">
           <img src="img/teto.png" alt="Artículo 2">
           <h3>Artículo 2</h3>
           <time datetime="2022-09-12">2022</time>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit a tenetur pariatur, reiciendis numquam soluta impedit quaerat minus vero rem esse?.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit a tenetur pariatur, reiciendis numquam soluta impedit quaerat minus vero rem esse?</p>
         </article>
+
       </div>
-        </section>
-    <div class="tituloauspiciadores">
-      <h1>Auspiciadores</h1>
-    </div>
-    <div class="auspiciadores">
-      <a href="https://bi.unsaac.edu.pe/">
-      <img src="img/teto.png">
-      </a>
-      <a href="https://bi.unsaac.edu.pe/">
-      <img src="img/teto.png">
-      </a>
-      <a href="https://bi.unsaac.edu.pe/">
-      <img src="img/teto.png">
-      </a>
-      <a href="https://bi.unsaac.edu.pe/">
-      <img src="img/teto.png">
-      </a>
-    </div>
+    </section>
   </main>
 
-  <footer>
-    <nav>
-      <a href="https://github.com/K-Kr0en3n">GIT</a>
-      <a href="https://www.facebook.com/cibiogen/">CIBIOGEN</a>
-      <a href="https://www.unsaac.edu.pe/">UNSAAC</a>
-    </nav>
+  <div class="tituloauspiciadores">
+    <h1>Auspiciadores</h1>
+  </div>
+  <div class="auspiciadores">
+    <a href="https://bi.unsaac.edu.pe/"><img src="img/teto.png" alt="Auspiciador UNSAAC"></a>
+    <a href="https://bi.unsaac.edu.pe/"><img src="img/teto.png" alt="Auspiciador UNSAAC"></a>
+    <a href="https://bi.unsaac.edu.pe/"><img src="img/teto.png" alt="Auspiciador UNSAAC"></a>
+    <a href="https://bi.unsaac.edu.pe/"><img src="img/teto.png" alt="Auspiciador UNSAAC"></a>
+  </div>
 
+  <footer id="contacto" class="pie">
+    <nav aria-label="Navegación de pie de página">
+      <a href="https://github.com/K-Kr0en3n" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.facebook.com/cibiogen/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.unsaac.edu.pe/" target="_blank" rel="noopener">UNSAAC</a>
+      <a href="formulario/">Postular</a>
+    </nav>
     <p>Cibiogen Derechos Reservados 2026 (c)</p>
   </footer>
+
 </body>
 </html>

@@ -1,0 +1,107 @@
+/* css/login.css — estilos propios de la página de login */
+.login-root {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.login-card {
+    width: 920px;
+    max-width: 960px;
+    background: rgba(8, 10, 20, 0.6);
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--accent-tint);
+    display: flex;
+    gap: 20px;
+}
+
+.login-form { flex: 0 0 360px; }
+.login-form h2 { color: var(--text-hi); margin-bottom: 12px; }
+.form-row { margin-bottom: 12px; }
+.form-row label { display: block; color: var(--text-lo); font-weight: 600; margin-bottom: 6px; }
+.form-row input[type=text],
+.form-row input[type=email],
+.form-row textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--text-hi);
+}
+.form-row input::placeholder,
+.form-row textarea::placeholder { color: var(--text-lo); }
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 14px;
+    background: var(--cta-grad);
+    color: var(--text-hi);
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+.btn-secondary {
+    background: transparent;
+    border: 0;
+    color: var(--text-lo);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.profile-pane { flex: 1; padding: 8px; display: flex; flex-direction: column; gap: 12px; }
+.profile-pane h3 { color: var(--text-hi); }
+.profile-pane h4 { color: var(--text-hi); }
+
+.profile-card {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--btn-grad);
+    border: 1px solid var(--accent-tint);
+}
+.profile-card .avatar-wrap {
+    flex: 0 0 96px;
+    height: 96px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--accent-tint);
+    box-shadow: var(--shadow-card);
+}
+.profile-card .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.profile-meta h3 { margin: 0; color: var(--text-hi); }
+.profile-meta .muted { color: var(--text-lo); margin-top: 6px; }
+
+.wall { margin-top: 10px; }
+.wall textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-hi);
+}
+.wall textarea::placeholder { color: var(--text-lo); }
+
+.post {
+    border-radius: 10px;
+    padding: 12px;
+    background: var(--btn-grad);
+    border: 1px solid var(--card-border);
+}
+.post .post-text { font-weight: 700; color: var(--text-hi); }
+.post .post-date { font-size: 0.85rem; color: var(--text-lo); margin-top: 6px; }
+
+@media (max-width: 900px) {
+    .login-card { flex-direction: column; }
+    .login-form { width: 100%; flex: unset; }
+    .profile-pane { width: 100%; }
+}

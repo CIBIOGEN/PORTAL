@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="noche">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/prueba.css">
-  <link rel="stylesheet" href="css/fusion.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/theme.js" defer></script>
 </head>
 <body>
 
@@ -20,12 +21,12 @@
   <header class="cabecera">
     <div class="cabecera-brand">
       <a href="index.html">
-        <img src="img/logo_cibiogen.svg" alt="Logo CIBIOGEN">
+        <img src="img/logo_cibiogen.png" alt="Logo CIBIOGEN">
         <h1>CIBIOGEN</h1>
       </a>
     </div>
     <nav class="cabecera-nav" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
+      <a href="index.html" aria-current="page">Inicio</a>
       <a href="articulos.html">Artículos</a>
       <a href="asesores.html">Asesores</a>
       <a href="invest.html">Investigación</a>
@@ -38,7 +39,7 @@
       <canvas id="synapse-canvas"></canvas>
 
       <div class="main-logo" id="center-logo">
-        <img src="img/logo_cibiogen.svg" alt="Centro de Investigación" onerror="this.style.display='none'">
+        <img src="img/logo_cibiogen.png" alt="Centro de Investigación" onerror="this.style.display='none'">
       </div>
 
       <div class="child-wrapper child-1">
@@ -65,54 +66,6 @@
 
   <section class="carousel-section">
     <div class="carousel-container" id="draggable-carousel">
-      <div class="carousel-item-wrapper">
-        <div class="carousel-item">
-          <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M2 12h4l2-7 4 14 2-7h4"/></svg>
-        </div>
-        <span class="carousel-label">PCR Virtual</span>
-      </div>
-      <div class="carousel-item-wrapper">
-        <div class="carousel-item">
-          <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M8 3c0 4-4 4-4 8s4 4 4 8M16 3c0 4 4 4 4 8s-4 4-4 8M6 7h12M6 12h12M6 17h12"/></svg>
-        </div>
-        <span class="carousel-label">Modelos Génicos</span>
-      </div>
-      <div class="carousel-item-wrapper">
-        <div class="carousel-item">
-          <svg class="carousel-icon" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.3"/><circle cx="6" cy="18" r="2.3"/><path d="M8.3 7.6 20 18M8.3 16.4 20 6"/></svg>
-        </div>
-        <span class="carousel-label">Análisis CRISPR</span>
-      </div>
-      <div class="carousel-item-wrapper">
-        <div class="carousel-item">
-          <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg>
-        </div>
-        <span class="carousel-label">Simulador 3D</span>
-      </div>
-      <div class="carousel-item-wrapper">
-        <div class="carousel-item">
-          <svg class="carousel-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg>
-        </div>
-        <span class="carousel-label">Bioinformática</span>
-      </div>
-      <div class="carousel-item-wrapper">
-        <div class="carousel-item">
-          <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M4 4h4v4H4zM10 4h4v4h-4zM16 4h4v4h-4zM4 10h4v4H4zM10 10h4v4h-4zM16 10h4v4h-4zM4 16h4v4H4zM10 16h4v4h-4zM16 16h4v4h-4z"/></svg>
-        </div>
-        <span class="carousel-label">Genotipado</span>
-      </div>
-      <div class="carousel-item-wrapper">
-        <div class="carousel-item">
-          <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M9 2h6M10 2v6l-5 10a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-10V2"/></svg>
-        </div>
-        <span class="carousel-label">Extracción ADN</span>
-      </div>
-      <div class="carousel-item-wrapper">
-        <div class="carousel-item">
-          <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M4 20V10M9 20V4M14 20V13M19 20V7"/></svg>
-        </div>
-        <span class="carousel-label">Secuenciación</span>
-      </div>
     </div>
   </section>
 
@@ -284,7 +237,8 @@
     <p>© 2026 CIBIOGEN — Todos los derechos reservados</p>
   </footer>
 
-  <script src="js/prueba.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/synapse.js"></script>
+  <script src="js/slider.js"></script>
 </body>
 </html>

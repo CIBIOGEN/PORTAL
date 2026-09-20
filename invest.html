@@ -1,42 +1,60 @@
 <!DOCTYPE html>
-<html lang= es>
+<html lang="es" data-theme="noche">
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="pagina web CIBIOGEN"/>
-    <link rel="stylesheet" href="css/estilos.css"/>
-    <title> CIBIOGEN </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Investigación - CIBIOGEN">
+    <title>Investigación — CIBIOGEN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/theme.js" defer></script>
 </head>
 
 <body>
-    <header>
-    <div>
-      <img src="img/logo_cibiogen.svg">
-      <h1>CIBIOGEN</h1>
+
+  <header class="cabecera">
+    <div class="cabecera-brand">
+      <a href="index.html">
+        <img src="img/logo_cibiogen.png" alt="Logo CIBIOGEN">
+        <h1>CIBIOGEN</h1>
+      </a>
     </div>
-    <nav>
+    <nav class="cabecera-nav" aria-label="Navegación principal">
       <a href="index.html">Inicio</a>
       <a href="articulos.html">Artículos</a>
       <a href="asesores.html">Asesores</a>
-      <a href="invest.html">Investigacion</a>
-      <a href="#">Contacto</a>
+      <a href="invest.html" aria-current="page">Investigación</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </header>
-  <main>
-    <div class="chamba">
-        <h1>Pagina en progreso...</h1>
-        <img src="https://media.tenor.com/M1SdSNvWjbkAAAAi/teto.gif">
-        <h1>pasen ideas oño</h1>
-        <img src="https://media1.tenor.com/m/Za00c86vX6YAAAAC/miku-hatsune-teto.gif">
-    </div>
-  </main>
-    <footer>
-    <nav>
-      <a href="https://github.com/K-Kr0en3n">GIT</a>
-      <a href="https://www.facebook.com/cibiogen/">CIBIOGEN</a>
-      <a href="https://www.unsaac.edu.pe/">UNSAAC</a>
-    </nav>
 
+  <main>
+    <section class="seccion" aria-labelledby="invest-titulo">
+      <div class="tituloglobo">
+        <h2 id="invest-titulo">Investigación</h2>
+      </div>
+      <hr>
+      <div class="chamba">
+        <h1>Página en progreso...</h1>
+        <img src="https://media.tenor.com/M1SdSNvWjbkAAAAi/teto.gif" alt="en construcción">
+        <h1>Pásen ideas</h1>
+        <img src="https://media1.tenor.com/m/Za00c86vX6YAAAAC/miku-hatsune-teto.gif" alt="teto miku">
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto" class="pie">
+    <nav aria-label="Navegación de pie de página">
+      <a href="https://github.com/K-Kr0en3n" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.facebook.com/cibiogen/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.unsaac.edu.pe/" target="_blank" rel="noopener">UNSAAC</a>
+      <a href="formulario/">Postular</a>
+    </nav>
     <p>Cibiogen Derechos Reservados 2026 (c)</p>
   </footer>
+
 </body>
 </html>
