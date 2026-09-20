@@ -31,7 +31,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url(ADN.png) space;
+  background: url(../img/ADN.png) space;
   background-size: 380px;
   opacity: 0.12;
   z-index: -1;
