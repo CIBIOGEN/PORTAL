@@ -687,13 +687,13 @@ img { max-width: 100%; }
     margin: 14px 0 0;
 }
 
-/* --auspiciadores -- */
-.tituloauspiciadores {
+/* --aliados -- */
+.tituloaliados {
     text-align: center;
     padding: 36px 20px 8px;
 }
 
-.tituloauspiciadores h1 {
+.tituloaliados h1 {
     font-family: var(--font-display);
     font-size: clamp(1.4rem, 3vw, 2rem);
     font-weight: 600;
@@ -704,7 +704,7 @@ img { max-width: 100%; }
     padding-bottom: 12px;
 }
 
-.tituloauspiciadores h1::after {
+.tituloaliados h1::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -715,7 +715,7 @@ img { max-width: 100%; }
     background: var(--accent-1);
 }
 
-.auspiciadores {
+.aliados {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -723,23 +723,85 @@ img { max-width: 100%; }
     padding: 20px 20px 44px;
 }
 
-.auspiciadores a { display: block; }
+.aliado {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    max-width: 780px;
+    width: 100%;
+    background: var(--surface-a);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-.auspiciadores img {
+.aliado:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.aliado img {
     width: 130px;
     height: 130px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 50%;
     border: 2px solid var(--accent-tint);
     box-shadow: var(--shadow-card);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0.9;
+    background: var(--surface-c);
+    padding: 4px;
+    transition: transform 0.3s ease;
+    flex: 0 0 auto;
 }
 
-.auspiciadores img:hover {
-    transform: scale(1.08);
-    opacity: 1;
-    box-shadow: var(--shadow-hover);
+.aliado img:hover {
+    transform: scale(1.05);
+}
+
+.aliado-body h3 {
+    font-family: var(--font-display);
+    color: var(--text-hi);
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.aliado-body p {
+    color: var(--text-lo);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.aliado-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.aliado-links a {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--text-hi);
+    background: var(--btn-grad);
+    border: 1px solid var(--accent-border);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.aliado-links a:hover {
+    background: var(--cta-grad);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .aliado { flex-direction: column; text-align: center; }
+    .aliado .card-meta { justify-content: center; }
+    .aliado-links { justify-content: center; }
 }
 
 /* --footer -- */
