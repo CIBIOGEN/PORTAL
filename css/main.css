@@ -105,64 +105,73 @@ img { max-width: 100%; }
     }
 }
 
-/* --botón de tema (flotante) -- */
-.theme-toggle {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 1200;
-    padding: 10px 14px;
-    border-radius: 12px;
-    border: 1px solid var(--line);
-    background: var(--surface-glass);
-    color: var(--text-hi);
-    font-family: var(--font-body);
-    font-weight: 700;
-    font-size: 0.85rem;
-    cursor: pointer;
-    backdrop-filter: blur(8px);
-    box-shadow: var(--shadow-card);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+/* --acciones de cabecera (login + tema) --
+   Viven dentro del header, no flotan sobre el contenido. */
+.cabecera-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
 }
 
-.theme-toggle:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-hover);
-}
-
-@media (max-width: 600px) {
-    .theme-toggle { right: 12px; bottom: 12px; }
-}
-
-/* --botón login arriba a la derecha -- */
 .top-right-login {
-    position: fixed;
-    top: 16px;
-    right: 20px;
-    z-index: 1000;
-    font-family: var(--font-body);
-}
-
-.top-right-login a {
     display: inline-block;
     padding: 8px 14px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: 700;
+    font-size: 0.9rem;
     color: var(--text-hi);
     background: var(--btn-grad);
     border: 1px solid var(--accent-border);
-    box-shadow: var(--shadow-card);
-    backdrop-filter: blur(6px);
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.top-right-login a:hover {
+.top-right-login:hover {
     background: var(--cta-grad);
     transform: translateY(-2px);
 }
 
+/* --botón de tema (en cabecera; variante flotante solo si no hay header) -- */
+.theme-toggle {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--accent-border);
+    background: var(--btn-grad);
+    color: var(--text-hi);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+
+.theme-toggle:hover {
+    background: var(--cta-grad);
+    transform: translateY(-2px);
+}
+
+.theme-toggle--float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1200;
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(8px);
+}
+
 @media (max-width: 600px) {
-    .top-right-login { top: 12px; right: 12px; }
+    .theme-toggle--float { right: 12px; bottom: 12px; }
+}
+
+@media (max-width: 700px) {
+    .cabecera-actions {
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
 }
 
 /* --main / hero sináptico -- */
@@ -258,7 +267,7 @@ img { max-width: 100%; }
     width: 360px;
     height: 360px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(125,122,255,0.22), var(--glow-faint));
+    background: radial-gradient(circle, var(--logo-halo), var(--glow-faint));
     filter: blur(18px);
     z-index: 9;
     pointer-events: none;
@@ -308,7 +317,7 @@ img { max-width: 100%; }
     font-size: 1rem;
     font-family: var(--font-body);
     text-align: center;
-    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+    text-shadow: var(--text-shadow);
     max-width: 160px;
     transform: translateY(4px);
 }
@@ -317,7 +326,7 @@ img { max-width: 100%; }
 .carousel-section {
     width: 100%;
     padding: 2rem 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    background: var(--fade-top);
     border-top: 1px solid var(--line);
 }
 
@@ -368,7 +377,7 @@ img { max-width: 100%; }
 .carousel-icon {
     width: 58px;
     height: 58px;
-    stroke: var(--surface-b);
+    stroke: rgba(255, 255, 255, 0.92);
     fill: none;
     stroke-width: 1.5;
     stroke-linecap: round;
@@ -380,7 +389,7 @@ img { max-width: 100%; }
     font-size: 1.05rem;
     font-weight: 600;
     letter-spacing: 0.2px;
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.85);
+    text-shadow: var(--text-shadow);
     color: var(--accent-4);
     text-align: center;
     max-width: 170px;
@@ -552,7 +561,7 @@ img { max-width: 100%; }
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid var(--accent-tint);
-    box-shadow: 0 0 0 6px rgba(42, 46, 82, 0.25);
+    box-shadow: 0 0 0 6px var(--card-border);
 }
 
 .asesor h3 { font-family: var(--font-display); color: var(--text-hi); font-size: 1.15rem; }
@@ -609,7 +618,7 @@ img { max-width: 100%; }
     width: 100%;
     padding: 40px 20px;
     text-align: center;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+    background: var(--fade-bottom);
     border-bottom: 1px solid var(--line);
 }
 
@@ -619,7 +628,7 @@ img { max-width: 100%; }
     font-weight: 700;
     color: var(--text-hi);
     margin: 0 0 12px;
-    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+    text-shadow: var(--text-shadow);
 }
 
 .titulo-hero h3 {

@@ -50,87 +50,99 @@
     --glow-soft: rgba(125, 122, 255, 0.28);
     --glow-faint: rgba(125, 122, 255, 0.06);
 
+    /* -- degradados de sección (hero / carrusel) -- */
+    --fade-bottom: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+    --fade-top: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+
+    /* -- sombreado de texto sobre figuras -- */
+    --text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+
+    /* -- halo del logo central -- */
+    --logo-halo: rgba(125, 122, 255, 0.22);
+
     /* -- formularios -- */
     --input-bg: rgba(255, 255, 255, 0.02);
     --input-border: rgba(255, 255, 255, 0.04);
 }
 
 :root[data-theme="claro"] {
-    --bg-body:
-        radial-gradient(1.5px 1.5px at 12% 22%, rgba(27,36,64,0.28) 50%, transparent 51%),
-        radial-gradient(1.5px 1.5px at 82% 14%, rgba(27,36,64,0.2) 50%, transparent 51%),
-        radial-gradient(1px 1px at 65% 38%, rgba(27,36,64,0.18) 50%, transparent 51%),
-        radial-gradient(1.5px 1.5px at 25% 65%, rgba(27,36,64,0.16) 50%, transparent 51%),
-        radial-gradient(1px 1px at 90% 70%, rgba(27,36,64,0.16) 50%, transparent 51%),
-        linear-gradient(135deg, #eef1fb 0%, #dde3f5 50%, #c9d6f0 100%);
+    --bg-body: #eef1f6;
 
     --text-hi: #1b2440;
     --text-lo: #4a5479;
 
-    --surface-a: rgba(255, 255, 255, 0.9);
-    --surface-b: rgba(255, 255, 255, 0.75);
+    --surface-a: rgba(255, 255, 255, 0.92);
+    --surface-b: rgba(255, 255, 255, 0.8);
     --surface-c: #ffffff;
-    --surface-glass: rgba(255, 255, 255, 0.85);
+    --surface-glass: rgba(255, 255, 255, 0.9);
 
-    --line: rgba(27, 36, 64, 0.14);
-    --line-soft: rgba(27, 36, 64, 0.08);
-    --card-border: rgba(27, 36, 64, 0.08);
+    --line: rgba(27, 36, 64, 0.15);
+    --line-soft: rgba(27, 36, 64, 0.09);
+    --card-border: rgba(27, 36, 64, 0.09);
     --ring: #ffffff;
 
     --accent-1: #2563eb;
-    --accent-2: #60a5fa;
-    --accent-3: #8b5cf6;
-    --accent-4: #06b6d4;
+    --accent-2: #1d4ed8;
+    --accent-3: #6d28d9;
+    --accent-4: #0891b2;
     --cta-grad: linear-gradient(90deg, var(--accent-4), var(--accent-3));
     --btn-grad: linear-gradient(180deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05));
-    --accent-border: rgba(37, 99, 235, 0.22);
-    --accent-tint: rgba(37, 99, 235, 0.07);
+    --accent-border: rgba(37, 99, 235, 0.25);
+    --accent-tint: rgba(37, 99, 235, 0.08);
 
-    --shadow-card: 0 8px 24px rgba(30, 40, 80, 0.16);
-    --shadow-hover: 0 18px 40px rgba(30, 40, 80, 0.24);
+    --shadow-card: 0 8px 24px rgba(30, 40, 80, 0.14);
+    --shadow-hover: 0 18px 40px rgba(30, 40, 80, 0.22);
     --glow-soft: rgba(37, 99, 235, 0.25);
     --glow-faint: rgba(37, 99, 235, 0.08);
 
-    --input-bg: rgba(255, 255, 255, 0.9);
-    --input-border: rgba(27, 36, 64, 0.15);
+    --fade-bottom: transparent;
+    --fade-top: transparent;
+
+    --text-shadow: 0 2px 6px rgba(255, 255, 255, 0.6);
+
+    --logo-halo: rgba(37, 99, 235, 0.2);
+
+    --input-bg: rgba(255, 255, 255, 0.95);
+    --input-border: rgba(27, 36, 64, 0.16);
 }
 
 :root[data-theme="contraste"] {
-    --bg-body:
-        radial-gradient(1.5px 1.5px at 12% 22%, rgba(255,255,255,0.6) 50%, transparent 51%),
-        radial-gradient(1.5px 1.5px at 82% 14%, rgba(255,255,255,0.4) 50%, transparent 51%),
-        radial-gradient(1px 1px at 65% 38%, rgba(255,255,255,0.35) 50%, transparent 51%),
-        radial-gradient(1.5px 1.5px at 25% 65%, rgba(255,255,255,0.3) 50%, transparent 51%),
-        radial-gradient(1px 1px at 90% 70%, rgba(255,255,255,0.3) 50%, transparent 51%),
-        linear-gradient(120deg, #000000 0%, #101010 50%, #1c1c2e 100%);
+    --bg-body: #000000;
 
     --text-hi: #ffffff;
-    --text-lo: rgba(255, 255, 255, 0.75);
+    --text-lo: rgba(255, 255, 255, 0.8);
 
-    --surface-a: rgba(255, 255, 255, 0.06);
-    --surface-b: rgba(255, 255, 255, 0.04);
-    --surface-c: rgba(255, 255, 255, 0.08);
-    --surface-glass: rgba(0, 0, 0, 0.6);
+    --surface-a: rgba(255, 255, 255, 0.09);
+    --surface-b: rgba(255, 255, 255, 0.05);
+    --surface-c: rgba(255, 255, 255, 0.13);
+    --surface-glass: rgba(0, 0, 0, 0.7);
 
-    --line: rgba(255, 255, 255, 0.35);
-    --line-soft: rgba(255, 255, 255, 0.12);
-    --card-border: rgba(255, 255, 255, 0.15);
+    --line: rgba(255, 255, 255, 0.45);
+    --line-soft: rgba(255, 255, 255, 0.18);
+    --card-border: rgba(255, 255, 255, 0.22);
     --ring: #ffffff;
 
-    --accent-1: #00e676;
-    --accent-2: #ccffec;
-    --accent-3: #b388ff;
-    --accent-4: #00e5ff;
+    --accent-1: #7df9ff;
+    --accent-2: #d6f9ff;
+    --accent-3: #c8b6ff;
+    --accent-4: #7df9ff;
     --cta-grad: linear-gradient(90deg, var(--accent-4), var(--accent-3));
-    --btn-grad: linear-gradient(180deg, rgba(0, 229, 255, 0.18), rgba(0, 229, 255, 0.08));
-    --accent-border: rgba(0, 229, 255, 0.5);
-    --accent-tint: rgba(179, 136, 255, 0.12);
+    --btn-grad: linear-gradient(180deg, rgba(125, 249, 255, 0.22), rgba(125, 249, 255, 0.1));
+    --accent-border: rgba(125, 249, 255, 0.7);
+    --accent-tint: rgba(125, 249, 255, 0.14);
 
-    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.6);
-    --shadow-hover: 0 20px 44px rgba(0, 0, 0, 0.75);
-    --glow-soft: rgba(0, 229, 255, 0.4);
-    --glow-faint: rgba(179, 136, 255, 0.18);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.8);
+    --shadow-hover: 0 20px 44px rgba(0, 0, 0, 0.9);
+    --glow-soft: rgba(125, 249, 255, 0.45);
+    --glow-faint: rgba(125, 249, 255, 0.18);
 
-    --input-bg: rgba(255, 255, 255, 0.08);
-    --input-border: rgba(255, 255, 255, 0.25);
+    --fade-bottom: transparent;
+    --fade-top: linear-gradient(to bottom, rgba(255, 255, 255, 0.06), transparent);
+
+    --text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+
+    --logo-halo: rgba(125, 249, 255, 0.3);
+
+    --input-bg: rgba(255, 255, 255, 0.1);
+    --input-border: rgba(255, 255, 255, 0.4);
 }

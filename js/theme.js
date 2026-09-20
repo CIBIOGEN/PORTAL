@@ -20,6 +20,7 @@
 
     function buildButton() {
         const btn = document.createElement('button');
+        btn.type = 'button';
         btn.className = 'theme-toggle';
         btn.setAttribute('aria-label', 'Cambiar tema');
         btn.addEventListener('click', () => {
@@ -28,7 +29,13 @@
             apply(t);
             render(btn, t);
         });
-        document.body.appendChild(btn);
+        const slot = document.querySelector('.cabecera-actions');
+        if (slot) {
+            slot.appendChild(btn);
+        } else {
+            btn.classList.add('theme-toggle--float');
+            document.body.appendChild(btn);
+        }
         render(btn, current());
     }
 
