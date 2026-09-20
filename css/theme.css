@@ -6,7 +6,7 @@
 
 :root,
 :root[data-theme="noche"] {
-    --font-display: 'Fraunces', Georgia, serif;
+    --font-display: 'Space Grotesk', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
     /* -- fondo (Tokyo Night) */

@@ -281,7 +281,7 @@ img { max-width: 100%; }
 .child-logo {
     width: 140px;
     height: 140px;
-    background: radial-gradient(circle at 30% 30%, var(--accent-2), var(--accent-1));
+    background: var(--cta-grad);
     border-radius: 50%;
     box-shadow: var(--shadow-card), inset 0 0 18px var(--glow-faint);
     cursor: pointer;
@@ -452,7 +452,7 @@ img { max-width: 100%; }
 }
 
 .grindgral p {
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     font-size: 1.05rem;
     line-height: 1.75;
     text-align: justify;
@@ -632,8 +632,7 @@ img { max-width: 100%; }
 }
 
 .titulo-hero h3 {
-    font-family: var(--font-display);
-    font-style: italic;
+    font-family: var(--font-body);
     font-weight: 500;
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: var(--text-lo);
@@ -682,8 +681,7 @@ img { max-width: 100%; }
 }
 
 .titulo2 h3 {
-    font-family: var(--font-display);
-    font-style: italic;
+    font-family: var(--font-body);
     font-weight: 500;
     color: var(--text-lo);
     margin: 14px 0 0;
