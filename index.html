@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CIBIOGEN - Centro de Investigación en Biología y Genética">
-  <link rel="stylesheet" href="estilos.css">
-  <title>CIBIOGEN</title>
+  <meta name="description" content="CIBIOGEN - Centro de Investigación en Biotecnología y Genética UNSAAC">
+  <title>CIBIOGEN — Centro de Investigación en Biotecnología y Genética</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="prueba.css">
+  <link rel="stylesheet" href="fusion.css">
 </head>
-
 <body>
 
-  <header>
-    <div>
-      <img src="logo_cibiogen.svg" alt="Logo CIBIOGEN" width="100" height="auto">
-      <h1>CIBIOGEN</h1>
+  <div class="top-right-login">
+    <a href="login.html">Iniciar Sesión</a>
+  </div>
+
+  <header class="cabecera">
+    <div class="cabecera-brand">
+      <a href="index.html">
+        <img src="logo_cibiogen.svg" alt="Logo CIBIOGEN">
+        <h1>CIBIOGEN</h1>
+      </a>
     </div>
-    <nav aria-label="Navegación principal">
+    <nav class="cabecera-nav" aria-label="Navegación principal">
       <a href="index.html">Inicio</a>
       <a href="articulos.html">Artículos</a>
       <a href="asesores.html">Asesores</a>
@@ -24,160 +33,258 @@
     </nav>
   </header>
 
-  <main>
+  <main class="main-content">
+    <div class="arc-container" id="arc-container">
+      <canvas id="synapse-canvas"></canvas>
 
-    <div class="titulo">
-      <section class="seccion">
-        <h1>Investigación y Futuro</h1>
-        <h3>"La vida no ocurre al azar: se regula, se expresa y se transforma."</h3>
-        <div class="tituloenlace">
-          <a href="invest.html">Conoce nuestros TEAMS</a>
-        </div>
-      </section>
+      <div class="main-logo" id="center-logo">
+        <img src="logo_cibiogen.svg" alt="Centro de Investigación" onerror="this.style.display='none'">
+      </div>
+
+      <div class="child-wrapper child-1">
+        <div class="child-logo" title="Equipo 1"></div>
+        <span class="child-label">Team de Bioinformática</span>
+      </div>
+
+      <div class="child-wrapper child-2">
+        <div class="child-logo" title="Equipo 2"></div>
+        <span class="child-label">Team de Biociencias y Biotecnología</span>
+      </div>
+
+      <div class="child-wrapper child-3">
+        <div class="child-logo" title="Equipo 3"></div>
+        <span class="child-label">Team de Salud y Genética Toxicológica</span>
+      </div>
+
+      <div class="child-wrapper child-4">
+        <div class="child-logo" title="Equipo 4"></div>
+        <span class="child-label">Team de Genética Poblacional</span>
+      </div>
     </div>
-
-    <section class="seccion" aria-labelledby="quienes-somos">
-      <div class="tituloglobo">
-        <h2 id="quienes-somos">Quiénes Somos</h2>
-      </div>
-      <hr>
-      <div class="grindgral">
-        <div class="cartagral">
-          <a href="https://www.facebook.com/cibiogen">
-            <img src="https://scontent.flim28-2.fna.fbcdn.net/v/t39.30808-6/488666852_991078926557444_7067419840210087296_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=2a1932&_nc_eui2=AeFX8aiFQBawg5nuTaghieDr3k3Rtswy21jeTdG2zDLbWMxL8STkee4hukHist2rjBnDwml17DV-uDiBiZfThPld&_nc_ohc=vjQf70tjIjMQ7kNvwG628Z2&_nc_oc=AdrhRfKdwldIZnwj-QMdicBAAUbQa2YHqWwBLuZq4wC6YOr0YBJpD3tIISrOWCziAHk&_nc_zt=23&_nc_ht=scontent.flim28-2.fna&_nc_gid=Y1Tt9uymYwG-PPZwg8sYlA&_nc_ss=7b2a8&oh=00_Af6MTCH-uybhg2Rqv9EqGUFRiVX4-z4kgOCI2JXQVgrftg&oe=69FDA968" alt="Equipo CIBIOGEN">
-          </a>
-          <p>El <strong>Centro de Investigación en Biotecnología y Genética (CIBIOGEN)</strong> es una organización estudiantil de la Escuela Profesional de Biología de la <strong>Universidad Nacional de San Antonio Abad del Cusco (UNSAAC)</strong>, dedicada a promover la investigación formativa, el desarrollo científico y la divulgación académica en las áreas de <strong>biotecnología</strong>, <strong>genética</strong> y ciencias afines.</p>
-          <p>Somos un espacio de aprendizaje, innovación y construcción científica, donde estudiantes desarrollan competencias investigativas, participan activamente en proyectos académicos y contribuyen a la generación y difusión del conocimiento científico dentro y fuera de la universidad. Como célula básica de investigación, CIBIOGEN busca fortalecer la formación de nuevos investigadores y consolidar una comunidad universitaria comprometida con la ciencia, la innovación y el desarrollo regional.</p>
-        <hr>
-        <nav class="info-cibiogen" aria-label="Información general de CIBIOGEN">
-        <div class="item-info">
-          <h3>Sede principal</h3>
-          <p> Laboratorio de Biología Molecular (C-321), Facultad de Ciencias Biológicas</p>
-        </div>
-       <div class="item-info">
-          <h3>Liderazgo actual</h3>
-          <p>Presidido por <strong>Claudio E. Yenque Moreno</strong></p>
-       </div>
-      </div>
-      </div>
-    </section>
-    <section class="seccion2" aria-labelledby="articulos-titulo">
-      <div class="tituloglobo">
-        <h2 id="articulos-titulo">Artículos</h2>
-      </div>
-      <hr>
-      </div>
-    </section>
-    <section>
-      <div class="slider">
-        <div class="track">
-          <div class="slide">
-            <a href="https://www.facebook.com/share/p/1Kxnq9wyQp/" target="_blank">
-              <img src="https://scontent.flim38-1.fna.fbcdn.net/v/t51.82787-15/673843918_18085281965626557_3512902232266827897_n.webp?stp=dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeFaQvWJV-U4rHFmnDwxJk_zAr8fXaFlL1MCvx9doWUvU8us36XGPYfvrBB3oeRnCHQKEK6fbgL-NVQKvQR8bdq9&_nc_ohc=K9MyztZzbOUQ7kNvwE-DsVT&_nc_oc=AdqfZ43P22urIQMN0ekWlvRYFiw3rNJlDUC84dlSuB6_t_1uhhiw4Xx2-ga8xZIXlmk&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_gid=BHutpOZyyUrRIjHX3W1jHg&_nc_ss=7b2a8&oh=00_Af4jWdEmauE1VUwgERLLiBP4oLcj8VxC1jUiVPgPcZGnMg&oe=69FB4315" alt="anuncio 1">
-            </a>
-          </div>
-        <div class="slide">
-            <a href="https://www.facebook.com/share/p/1ChcRDtwBN/" target="_blank">
-              <img src="https://scontent.flim38-1.fna.fbcdn.net/v/t51.82787-15/674438290_18085013747626557_1481208930995381324_n.webp?stp=dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeE0t6jocWQsbWjtMDBVM9OE-Cakm7Blp5L4JqSbsGWnkiFoFr3xQh-hXKxJm5fAIK6zZ6TxmtFtZbN5Ya1oDCAS&_nc_ohc=u1WeQtQxLcIQ7kNvwFigHXM&_nc_oc=Adp2APnZtNT5K0QA1NUqqbMy7MxZk0gTfyBcvTbodtrJoSl9Y-Lh4BFY90oF7V3P1UQ&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_gid=xVDPB9-uh3LG3Axf_dwW5Q&_nc_ss=7b2a8&oh=00_Af4lnvmsZ0n8FUy4562bpiM2WhL9o6c6eH7LSO_qa5QsuA&oe=69FB36FB" alt="anuncio 2">
-            </a>
-        </div>
-        <div class="slide">
-            <a href="https://www.facebook.com/share/p/1JFqsnzTgx/" target="_blank">
-              <img src="https://scontent.flim28-1.fna.fbcdn.net/v/t51.82787-15/669910168_18083841716626557_4327276396869196073_n.webp?stp=dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGIylzpWfvN2a-MVceElhl6qKGuNS_DYmGooa41L8NiYbnWwkset0kExV3UnTv9I-AhOCkBZXerUUtrTtsP7mlI&_nc_ohc=aCZyDerkiJIQ7kNvwFw_Qzq&_nc_oc=AdoBYCGqe7a90CU896Ie7iFQXjrxANgOIaksbhGd2f-xHvOQ3ympQjZK_gdVq_isV8Y&_nc_zt=23&_nc_ht=scontent.flim28-1.fna&_nc_gid=XSFBClUVsr_iGLx-AKJiLg&_nc_ss=7b2a8&oh=00_Af43JJP1Epy8mvjuzjXF4uV7ZRIuq9FsQVBnFLlm-zlGhA&oe=69FB1D9F" alt="anuncio 3">
-            </a>
-        </div>
-        <div class="slide">
-            <a href="https://www.facebook.com/share/p/1CnPChMMko/" target="_blank">
-              <img src="https://scontent.flim38-1.fna.fbcdn.net/v/t51.82787-15/670409363_18083375867626557_8319754060495518_n.webp?stp=dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeEpfQVf5Ipy9tOa6kFwqKxYSxssQdOb0pdLGyxB05vSlxWxpa7WjLb4xYVlMKlVO8GifeNVytyGsQJuXSt5ouz7&_nc_ohc=jXrrgHa6qf0Q7kNvwHTe25D&_nc_oc=Adq8t-yWeqtgij9k134AqW6_ivndwaF7wdTwT9n8h1_VbKc7CcUbbdSu0GRkI18Gezc&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_gid=-1vtT8BPANRjqhi3duKXuw&_nc_ss=7b2a8&oh=00_Af6HGUa7S1vJ--dK79zxzN2OcgV6ltXCJaZ6Qu6IkFRbvQ&oe=69FB38D1" alt="anuncio 4">
-            </a>
-        </div>
-        <div class="slide">
-            <a href="https://www.facebook.com/share/p/182gPmbebf/" target="_blank">
-              <img src="https://scontent.flim38-1.fna.fbcdn.net/v/t51.82787-15/661375504_18083036723626557_5323373167532706598_n.webp?stp=dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeEyhp7t8hINGE6onaUuaVF1LTap-PyjnM4tNqn4_KOczpI_1Cw9luvRJzHAkUevuhr4jW_3mluQO0jMFGgCozkc&_nc_ohc=BDJepe-w0h0Q7kNvwHNwW6B&_nc_oc=Adr0t9Rex1GNwT5VgexuL9tZX0S76KBvPzZpWDWyayPx-YKtJivoDXewBxkhcS1C9Gs&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_gid=p6KUjRsggPHMXLPD6FN76Q&_nc_ss=7b2a8&oh=00_Af4JRNr8RFYhpH_gvUGS2tKVGaohsf5-zSH3tZYw04wu2A&oe=69FB3C74">
-            </a>
-        </div>
-        <div class="slide">
-            <a href="https://www.facebook.com/share/p/1CxBP3Nn17/" target="_blank">
-              <img src="https://scontent.flim38-1.fna.fbcdn.net/v/t51.82787-15/560358946_18061981127626557_1684359000180932476_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeHiyByM26pp_DLs7xCTzcRAQg983o94rK9CD3zej3isr1BJaQ4jpoSYMJJo5gPsCHX3g6-lM7w4hv8pfi-EiHVL&_nc_ohc=v82ZOtzjrs8Q7kNvwG8R8Fr&_nc_oc=Ado71rQ4B-3YPr5tPispD7H_32FnsDlEHsXLT-XmM1NARWF4ZuCR-Agb-eaaN8ofurA&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_gid=0WscBOWJoM2bjO4hIqqibQ&_nc_ss=7b2a8&oh=00_Af4g4in4heHARf5k7e7TpDg0rw4Vnsy1zxVnJm3Sc3SYfQ&oe=69FB344B">
-            </a>
-        </div>
-        <div class="slide">
-            <a href="https://www.facebook.com/share/p/1AzUWzLNBQ/" target="_blank">
-              <img src="https://scontent.flim38-1.fna.fbcdn.net/v/t51.82787-15/549746856_18058815284626557_1703585478278730371_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeHbt_t0DJVQ9_-gQ8X6eUtyvpSyWry0ZD2-lLJavLRkPcvoVtqLbmabc2DG-sgB2HNUJ9ssqzQnMwM98UWqy8q9&_nc_ohc=yDoAUKjW6kgQ7kNvwEJcCe5&_nc_oc=Adp-HVOo6cuPBv8PFKUuS66TxT0wY0AqXPjK_Roj2Ijs3r-i2TBlMuUNLCwX7a92gDo&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_gid=bkM1x5AEkEEoVkzXXst-kg&_nc_ss=7b2a8&oh=00_Af6i5IU1HROiRcyNYEy-w_Q3GLxEXsa7O7DgZLd0P4JTpg&oe=69FB1AF4">
-            </a>
-        </div>
-        </div>
-      </div>
-    <script src="script.js"></script>
-    </section>
-
-    <section class="seccion" aria-labelledby="asesores-titulo">
-      <div class="tituloglobo">
-        <h2 id="asesores-titulo">Asesores</h2>
-      </div>
-      <hr>
-      <div class="gridasesores">
-
-        <div class="asesor">
-          <img src="teto.png" alt="Foto de Profesor Y">
-          <div>
-            <h3>Profesor Y</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolore debitis illo ad ex, consequuntur, vel similique cumque facilis tenetur architecto.</p>
-          </div>
-        </div>
-
-        <div class="asesor">
-          <img src="teto.png" alt="Foto de Profesor X">
-          <div>
-            <h3>Profesor X</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ipsam laboriosam, nihil deleniti accusantium esse quidem non, quaerat aliquam voluptatum incidunt.</p>
-          </div>
-        </div>
-
-      </div>
-      <div class="flecha">
-        <a href="asesores.html">Ver más →</a>
-      </div>
-    </section>
-
-    <div class="titulo2">
-      <section class="seccion">
-        <h1>Únete a Nuestro Centro de Investigación</h1>
-        <div class="tituloenlace">
-          <a href="https://youtu.be/DeI2h_OCpuA?si=QgP3-7ds228KEw9K" target="_blank" rel="noopener">Click Aquí</a>
-        </div>
-        <h3>"Descifra el lenguaje de la vida."</h3>
-      </section>
-    </div>
-
-    <div class="tituloauspiciadores">
-      <h1>Auspiciadores</h1>
-    </div>
-    <div class="auspiciadores">
-      <a href="https://bi.unsaac.edu.pe/" target="_blank" rel="noopener">
-        <img src="teto.png" alt="Auspiciador UNSAAC">
-      </a>
-      <a href="https://bi.unsaac.edu.pe/" target="_blank" rel="noopener">
-        <img src="teto.png" alt="Auspiciador UNSAAC">
-      </a>
-      <a href="https://bi.unsaac.edu.pe/" target="_blank" rel="noopener">
-        <img src="teto.png" alt="Auspiciador UNSAAC">
-      </a>
-      <a href="https://bi.unsaac.edu.pe/" target="_blank" rel="noopener">
-        <img src="teto.png" alt="Auspiciador UNSAAC">
-      </a>
-    </div>
-
   </main>
 
-  <footer id="contacto">
+  <section class="carousel-section">
+    <div class="carousel-container" id="draggable-carousel">
+      <div class="carousel-item-wrapper">
+        <div class="carousel-item">
+          <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M2 12h4l2-7 4 14 2-7h4"/></svg>
+        </div>
+        <span class="carousel-label">PCR Virtual</span>
+      </div>
+      <div class="carousel-item-wrapper">
+        <div class="carousel-item">
+          <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M8 3c0 4-4 4-4 8s4 4 4 8M16 3c0 4 4 4 4 8s-4 4-4 8M6 7h12M6 12h12M6 17h12"/></svg>
+        </div>
+        <span class="carousel-label">Modelos Génicos</span>
+      </div>
+      <div class="carousel-item-wrapper">
+        <div class="carousel-item">
+          <svg class="carousel-icon" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.3"/><circle cx="6" cy="18" r="2.3"/><path d="M8.3 7.6 20 18M8.3 16.4 20 6"/></svg>
+        </div>
+        <span class="carousel-label">Análisis CRISPR</span>
+      </div>
+      <div class="carousel-item-wrapper">
+        <div class="carousel-item">
+          <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg>
+        </div>
+        <span class="carousel-label">Simulador 3D</span>
+      </div>
+      <div class="carousel-item-wrapper">
+        <div class="carousel-item">
+          <svg class="carousel-icon" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg>
+        </div>
+        <span class="carousel-label">Bioinformática</span>
+      </div>
+      <div class="carousel-item-wrapper">
+        <div class="carousel-item">
+          <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M4 4h4v4H4zM10 4h4v4h-4zM16 4h4v4h-4zM4 10h4v4H4zM10 10h4v4h-4zM16 10h4v4h-4zM4 16h4v4H4zM10 16h4v4h-4zM16 16h4v4h-4z"/></svg>
+        </div>
+        <span class="carousel-label">Genotipado</span>
+      </div>
+      <div class="carousel-item-wrapper">
+        <div class="carousel-item">
+          <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M9 2h6M10 2v6l-5 10a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-10V2"/></svg>
+        </div>
+        <span class="carousel-label">Extracción ADN</span>
+      </div>
+      <div class="carousel-item-wrapper">
+        <div class="carousel-item">
+          <svg class="carousel-icon" viewBox="0 0 24 24"><path d="M4 20V10M9 20V4M14 20V13M19 20V7"/></svg>
+        </div>
+        <span class="carousel-label">Secuenciación</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="titulo-hero">
+    <section class="seccion">
+      <h1>Investigación y Futuro</h1>
+      <h3>"La vida no ocurre al azar: se regula, se expresa y se transforma."</h3>
+      <div class="tituloenlace">
+        <a href="invest.html">Conoce nuestros TEAMS</a>
+      </div>
+    </section>
+  </div>
+
+  <section class="seccion" aria-labelledby="articulos-titulo">
+    <div class="tituloglobo">
+      <h2 id="articulos-titulo">Artículos</h2>
+    </div>
+    <hr>
+    <div class="slider">
+      <div class="track">
+        <div class="slide">
+          <a href="https://www.facebook.com/share/p/1Kxnq9wyQp/" target="_blank">
+            <img src="https://scontent.flim38-1.fna.fbcdn.net/v/t51.82787-15/673843918_18085281965626557_3512902232266827897_n.webp?stp=dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeFaQvWJV-U4rHFmnDwxJk_zAr8fXaFlL1MCvx9doWUvU8us36XGPYfvrBB3oeRnCHQKEK6fbgL-NVQKvQR8bdq9&_nc_ohc=K9MyztZzbOUQ7kNvwE-DsVT&_nc_oc=AdqfZ43P22urIQMN0ekWlvRYFiw3rNJlDUC84dlSuB6_t_1uhhiw4Xx2-ga8xZIXlmk&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_gid=BHutpOZyyUrRIjHX3W1jHg&_nc_ss=7b2a8&oh=00_Af4jWdEmauE1VUwgERLLiBP4oLcj8VxC1jUiVPgPcZGnMg&oe=69FB4315" alt="anuncio 1">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.facebook.com/share/p/1ChcRDtwBN/" target="_blank">
+            <img src="https://scontent.flim38-1.fna.fbcdn.net/v/t51.82787-15/674438290_18085013747626557_1481208930995381324_n.webp?stp=dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeE0t6jocWQsbWjtMDBVM9OE-Cakm7Blp5L4JqSbsGWnkiFoFr3xQh-hXKxJm5fAIK6zZ6TxmtFtZbN5Ya1oDCAS&_nc_ohc=u1WeQtQxLcIQ7kNvwFigHXM&_nc_oc=Adp2APnZtNT5K0QA1NUqqbMy7MxZk0gTfyBcvTbodtrJoSl9Y-Lh4BFY90oF7V3P1UQ&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_gid=xVDPB9-uh3LG3Axf_dwW5Q&_nc_ss=7b2a8&oh=00_Af4lnvmsZ0n8FUy4562bpiM2WhL9o6c6eH7LSO_qa5QsuA&oe=69FB36FB" alt="anuncio 2">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.facebook.com/share/p/1JFqsnzTgx/" target="_blank">
+            <img src="https://scontent.flim28-1.fna.fbcdn.net/v/t51.82787-15/669910168_18083841716626557_4327276396869196073_n.webp?stp=dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGIylzpWfvN2a-MVceElhl6qKGuNS_DYmGooa41L8NiYbnWwkset0kExV3UnTv9I-AhOCkBZXerUUtrTtsP7mlI&_nc_ohc=aCZyDerkiJIQ7kNvwFw_Qzq&_nc_oc=AdoBYCGqe7a90CU896Ie7iFQXjrxANgOIaksbhGd2f-xHvOQ3ympQjZK_gdVq_isV8Y&_nc_zt=23&_nc_ht=scontent.flim28-1.fna&_nc_gid=XSFBClUVsr_iGLx-AKJiLg&_nc_ss=7b2a8&oh=00_Af43JJP1Epy8mvjuzjXF4uV7ZRIuq9FsQVBnFLlm-zlGhA&oe=69FB1D9F" alt="anuncio 3">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.facebook.com/share/p/1CnPChMMko/" target="_blank">
+            <img src="https://scontent.flim38-1.fna.fbcdn.net/v/t51.82787-15/670409363_18083375867626557_8319754060495518_n.webp?stp=dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeEpfQVf5Ipy9tOa6kFwqKxYSxssQdOb0pdLGyxB05vSlxWxpa7WjLb4xYVlMKlVO8GifeNVytyGsQJuXSt5ouz7&_nc_ohc=jXrrgHa6qf0Q7kNvwHTe25D&_nc_oc=Adq8t-yWeqtgij9k134AqW6_ivndwaF7wdTwT9n8h1_VbKc7CcUbbdSu0GRkI18Gezc&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_gid=-1vtT8BPANRjqhi3duKXuw&_nc_ss=7b2a8&oh=00_Af6HGUa7S1vJ--dK79zxzN2OcgV6ltXCJaZ6Qu6IkFRbvQ&oe=69FB38D1" alt="anuncio 4">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.facebook.com/share/p/182gPmbebf/" target="_blank">
+            <img src="https://scontent.flim38-1.fna.fbcdn.net/v/t51.82787-15/661375504_18083036723626557_5323373167532706598_n.webp?stp=dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeEyhp7t8hINGE6onaUuaVF1LTap-PyjnM4tNqn4_KOczpI_1Cw9luvRJzHAkUevuhr4jW_3mluQO0jMFGgCozkc&_nc_ohc=BDJepe-w0h0Q7kNvwHNwW6B&_nc_oc=Adr0t9Rex1GNwT5VgexuL9tZX0S76KBvPzZpWDWyayPx-YKtJivoDXewBxkhcS1C9Gs&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_gid=p6KUjRsggPHMXLPD6FN76Q&_nc_ss=7b2a8&oh=00_Af4JRNr8RFYhpH_gvUGS2tKVGaohsf5-zSH3tZYw04wu2A&oe=69FB3C74">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.facebook.com/share/p/1CxBP3Nn17/" target="_blank">
+            <img src="https://scontent.flim38-1.fna.fbcdn.net/v/t51.82787-15/560358946_18061981127626557_1684359000180932476_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeHiyByM26pp_DLs7xCTzcRAQg983o94rK9CD3zej3isr1BJaQ4jpoSYMJJo5gPsCHX3g6-lM7w4hv8pfi-EiHVL&_nc_ohc=v82ZOtzjrs8Q7kNvwG8R8Fr&_nc_oc=Ado71rQ4B-3YPr5tPispD7H_32FnsDlEHsXLT-XmM1NARWF4ZuCR-Agb-eaaN8ofurA&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_gid=0WscBOWJoM2bjO4hIqqibQ&_nc_ss=7b2a8&oh=00_Af4g4in4heHARf5k7e7TpDg0rw4Vnsy1zxVnJm3Sc3SYfQ&oe=69FB344B">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.facebook.com/share/p/1AzUWzLNBQ/" target="_blank">
+            <img src="https://scontent.flim38-1.fna.fbcdn.net/v/t51.82787-15/549746856_18058815284626557_1703585478278730371_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeHbt_t0DJVQ9_-gQ8X6eUtyvpSyWry0ZD2-lLJavLRkPcvoVtqLbmabc2DG-sgB2HNUJ9ssqzQnMwM98UWqy8q9&_nc_ohc=yDoAUKjW6kgQ7kNvwEJcCe5&_nc_oc=Adp-HVOo6cuPBv8PFKUuS66TxT0wY0AqXPjK_Roj2Ijs3r-i2TBlMuUNLCwX7a92gDo&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_gid=bkM1x5AEkEEoVkzXXst-kg&_nc_ss=7b2a8&oh=00_Af6i5IU1HROiRcyNYEy-w_Q3GLxEXsa7O7DgZLd0P4JTpg&oe=69FB1AF4">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" aria-labelledby="quienes-somos">
+    <div class="tituloglobo">
+      <h2 id="quienes-somos">Quiénes Somos</h2>
+    </div>
+    <hr>
+    <div class="grindgral">
+      <div class="cartagral creative-card">
+        <div class="card-media">
+          <a href="./img/fondo_cibiogen.jpg" aria-label="Ver imagen de CIBIOGEN">
+            <img src="img/fondo_cibiogen.jpg" alt="Fondo CIBIOGEN">
+          </a>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Centro de Investigación en Biotecnología y Genética (CIBIOGEN)</h3>
+          <p>El <strong>Centro de Investigación en Biotecnología y Genética (CIBIOGEN)</strong> es una organización estudiantil de la Escuela Profesional de Biología de la <strong>Universidad Nacional de San Antonio Abad del Cusco (UNSAAC)</strong>, dedicada a promover la investigación formativa, el desarrollo científico y la divulgación académica en las áreas de <strong>biotecnología</strong>, <strong>genética</strong> y ciencias afines.</p>
+          <p>Somos un espacio de aprendizaje, innovación y construcción científica, donde estudiantes desarrollan competencias investigativas, participan activamente en proyectos académicos y contribuyen a la generación y difusión del conocimiento científico dentro y fuera de la universidad. Como célula básica de investigación, CIBIOGEN busca fortalecer la formación de nuevos investigadores y consolidar una comunidad universitaria comprometida con la ciencia, la innovación y el desarrollo regional.</p>
+
+          <div class="card-meta">
+            <div class="meta-item"><strong>Sede:</strong> Laboratorio de Biología Molecular (C-321)</div>
+            <div class="meta-item"><strong>Liderazgo:</strong> Claudio E. Yenque Moreno</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="libros-banner">
+    <div class="libros-inner">
+      <h3>Libros Gratis</h3>
+      <p>Accede a recursos y libros gratuitos seleccionados para apoyar tus investigaciones y estudio.</p>
+      <a class="libros-cta" href="libros.html">Ver libros</a>
+    </div>
+    <div class="libros-grid" aria-label="Portadas de libros gratis">
+      <a class="libro-item" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fforms.gle%2FZd5EsJPk6GU7CPui6&h=AUDliHr-72Ra3S0_bZn30v3LPuZ01GINu0m6BM8fK0zw2DkXrgUU7NoDtpYXWatafvZXou3A0VhNnHaihTq7Lh3FL3K9rprQfBgnZcF5HQFHDbXUUogDo1mPEbleDzgc6JWWlQ1DwktlnDOI33OP0BwQvQ&__tn__=-UK-y-R&c[0]=AUC0kkEooBcdFyCfE0exYOSkPpUUctPSVpt3QMe6uvCXD-lIaCOnrPXyIsEgM2pPdR-rp9xrQt8iVQ0DVHliO0Y8nQMwfih-kSUHpDkvUAtMEfzc7Qzzng2nGvTZdqcL-s2e59Svaaec4ENWOiDESKkM7LjcnLBmStuejeWIWshvKLbD0F0vNlXhXGLjwuoiNzt2RPmwG3eWdufzjwzEzqtHhFKcY14LX3Ausj1XSTlUu8Pr" target="_blank" rel="noopener">
+        <img src="img/Libro1.jpg" alt="Libro 1">
+      </a>
+      <a class="libro-item" href="#">
+        <img src="img/Libro2.jpg" alt="Libro 2">
+      </a>
+      <a class="libro-item" href="#">
+        <img src="img/Libro3.jpg" alt="Libro 3">
+      </a>
+    </div>
+  </div>
+
+  <section class="seccion" aria-labelledby="asesores-titulo">
+    <div class="tituloglobo">
+      <h2 id="asesores-titulo">Asesores</h2>
+    </div>
+    <hr>
+    <div class="gridasesores">
+
+      <div class="asesor">
+        <img src="teto.png" alt="Foto de Profesor Y">
+        <div>
+          <h3>Profesor Y</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolore debitis illo ad ex, consequuntur, vel similique cumque facilis tenetur architecto.</p>
+        </div>
+      </div>
+
+      <div class="asesor">
+        <img src="teto.png" alt="Foto de Profesor X">
+        <div>
+          <h3>Profesor X</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ipsam laboriosam, nihil deleniti accusantium esse quidem non, quaerat aliquam voluptatum incidunt.</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="flecha">
+      <a href="asesores.html">Ver más asesores</a>
+    </div>
+  </section>
+
+  <div class="titulo2">
+    <section class="seccion">
+      <h1>Únete a Nuestro Centro de Investigación</h1>
+      <div class="tituloenlace">
+        <a href="https://youtu.be/DeI2h_OCpuA?si=QgP3-7ds228KEw9K" target="_blank" rel="noopener">Click Aquí</a>
+      </div>
+      <h3>"Descifra el lenguaje de la vida."</h3>
+    </section>
+  </div>
+
+  <div class="tituloauspiciadores">
+    <h1>Auspiciadores</h1>
+  </div>
+  <div class="auspiciadores">
+    <a href="https://bi.unsaac.edu.pe/" target="_blank" rel="noopener">
+      <img src="teto.png" alt="Auspiciador UNSAAC">
+    </a>
+    <a href="https://bi.unsaac.edu.pe/" target="_blank" rel="noopener">
+      <img src="teto.png" alt="Auspiciador UNSAAC">
+    </a>
+    <a href="https://bi.unsaac.edu.pe/" target="_blank" rel="noopener">
+      <img src="teto.png" alt="Auspiciador UNSAAC">
+    </a>
+    <a href="https://bi.unsaac.edu.pe/" target="_blank" rel="noopener">
+      <img src="teto.png" alt="Auspiciador UNSAAC">
+    </a>
+  </div>
+
+  <footer id="contacto" class="pie">
     <nav aria-label="Navegación de pie de página">
       <a href="https://github.com/K-Kr0en3n" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.facebook.com/cibiogen/" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.unsaac.edu.pe/" target="_blank" rel="noopener">UNSAAC</a>
+      <a href="formulario/">Postular</a>
     </nav>
     <p>© 2026 CIBIOGEN — Todos los derechos reservados</p>
   </footer>
 
+  <script src="prueba.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
